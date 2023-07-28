@@ -3,7 +3,7 @@ import os
 
 import asyncpg
 import discord
-from aimiko import AimikoCore
+from aimikocore import AimikoCore
 from aiohttp import ClientSession
 from dotenv import load_dotenv
 from libs.utils import AimikoLogger
