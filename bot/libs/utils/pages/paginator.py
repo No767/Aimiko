@@ -12,7 +12,7 @@ from .modals import NumberedPageModal
 
 # This is originally from RoboDanny's Paginator class (RoboPages)
 # In turn, this is taken from Kumiko (https://github.com/No767/Kumiko/blob/dev/Bot/Libs/utils/pages/paginator.py)
-class AikoPages(discord.ui.View):
+class AimikoPages(discord.ui.View):
     def __init__(
         self,
         source: menus.PageSource,

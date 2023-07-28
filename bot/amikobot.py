@@ -3,10 +3,10 @@ import os
 
 import asyncpg
 import discord
-from aikocore import AikoCore
+from aimiko import AimikoCore
 from aiohttp import ClientSession
 from dotenv import load_dotenv
-from libs.utils import AikoLogger
+from libs.utils import AimikoLogger
 
 try:
     import uvloop
@@ -29,14 +29,14 @@ async def main() -> None:
     async with ClientSession() as session, asyncpg.create_pool(
         dsn=POSTGRES_URI, command_timeout=60, max_size=20, min_size=20
     ) as pool:
-        async with AikoCore(
+        async with AimikoCore(
             intents=intents, session=session, pool=pool, dev_mode=DEV_MODE
         ) as bot:
             await bot.start(TOKEN)
 
 
 def launch() -> None:
-    with AikoLogger():
+    with AimikoLogger():
         asyncio.run(main())
 
 

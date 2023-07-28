@@ -14,10 +14,10 @@ ENV PYTHONUNBUFFERED=1
 RUN curl -sSL https://install.python-poetry.org | python -
 ENV PATH="${PATH}:/root/.local/bin"
 
-WORKDIR /Aiko
+WORKDIR /Aimiko
 
-COPY /pyproject.toml /Aiko/
-COPY /poetry.lock /Aiko/
+COPY /pyproject.toml /Aimiko/
+COPY /poetry.lock /Aimiko/
 
 RUN poetry export -f requirements.txt --output requirements.txt --without-hashes --only main
 
@@ -36,36 +36,36 @@ RUN apt update \
   libsodium-dev \
   git
 
-WORKDIR /Aiko
-COPY /bot/aikobot.py /Aiko/bot/
-COPY /bot/aikocore.py /Aiko/bot/
-# COPY /Migrations /Aiko/Migrations
-COPY /bot/cogs /Aiko/bot/cogs
-COPY /bot/libs /Aiko/bot/libs/
-# COPY /migrations-runner.py /Aiko/migrations-runner.py
-COPY /docker/start.sh /Aiko/start.sh
-COPY /docker/wait-for /Aiko/wait-for
+WORKDIR /Aimiko
+COPY /bot/aimikobot.py /Aimiko/bot/
+COPY /bot/aimikocore.py /Aimiko/bot/
+# COPY /Migrations /Aimiko/Migrations
+COPY /bot/cogs /Aimiko/bot/cogs
+COPY /bot/libs /Aimiko/bot/libs/
+# COPY /migrations-runner.py /Aimiko/migrations-runner.py
+COPY /docker/start.sh /Aimiko/start.sh
+COPY /docker/wait-for /Aimiko/wait-for
 
-COPY --from=builder /Aiko/requirements.txt /Aiko/requirements.txt
+COPY --from=builder /Aimiko/requirements.txt /Aimiko/requirements.txt
 
-RUN adduser --disabled-password --gecos "" aiko \
-  && chown -R aiko:aiko /Aiko \
-  && chmod +x /Aiko/start.sh \
-  && chmod +x /Aiko/wait-for
+RUN adduser --disabled-password --gecos "" aimiko \
+  && chown -R aimiko:aimiko /Aimiko \
+  && chmod +x /Aimiko/start.sh \
+  && chmod +x /Aimiko/wait-for
 
-USER aiko
+USER Aimiko
 
-ENV PATH="${PATH}:/home/aiko/.local/bin"
+ENV PATH="${PATH}:/home/aimiko/.local/bin"
 
 RUN pip install --user -r requirements.txt
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
 
-CMD ["/Aiko/start.sh"]
+CMD ["/Aimiko/start.sh"]
 
 STOPSIGNAL SIGTERM
 
-LABEL org.opencontainers.image.title="Aiko"
+LABEL org.opencontainers.image.title="Aimiko"
 LABEL org.opencontainers.image.description="A multipurpose Discord bot built for the Trans Gayming community"
 LABEL org.opencontainers.image.licenses="Apache-2.0"
-LABEL org.opencontainers.image.source="https://github.com/No767/Aiko"
+LABEL org.opencontainers.image.source="https://github.com/No767/Aimiko"

@@ -1,5 +1,5 @@
 run:
-	poetry run python Bot/aikobot.py
+	poetry run python Bot/aimikobot.py
 
 prod-run:
-	./venv/bin/python3 Bot/aikobot.py
+	./venv/bin/python3 Bot/aimikobot.py

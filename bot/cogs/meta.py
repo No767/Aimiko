@@ -1,4 +1,4 @@
-from aikocore import AikoCore
+from aimikocore import AimikoCore
 from discord.ext import commands
 from libs.utils import time
 
@@ -6,7 +6,7 @@ from libs.utils import time
 class Meta(commands.Cog):
     """Commands that provide information about Aiko"""
 
-    def __init__(self, bot: AikoCore) -> None:
+    def __init__(self, bot: AimikoCore) -> None:
         self.bot = bot
 
     def get_bot_uptime(self, *, brief: bool = False) -> str:
@@ -20,5 +20,5 @@ class Meta(commands.Cog):
         await ctx.send(f"Uptime: **{self.get_bot_uptime()}**")
 
 
-async def setup(bot: AikoCore) -> None:
+async def setup(bot: AimikoCore) -> None:
     await bot.add_cog(Meta(bot))

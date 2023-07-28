@@ -7,7 +7,7 @@ import discord
 from aiohttp import ClientSession
 from cogs import EXTENSIONS
 from discord.ext import commands
-from libs.utils import AikoHelp, ensure_pg_conn
+from libs.utils import AimikoHelp, ensure_pg_conn
 
 # Some weird import logic to ensure that watchfiles is there
 _fsw = True
@@ -24,8 +24,8 @@ def get_prefix(bot, msg: discord.Message):
     return prefixes
 
 
-class AikoCore(commands.Bot):
-    """The core of Aiko"""
+class AimikoCore(commands.Bot):
+    """The core of Aimiko"""
 
     def __init__(
         self,
@@ -39,7 +39,7 @@ class AikoCore(commands.Bot):
         super().__init__(
             activity=discord.Activity(type=discord.ActivityType.watching, name=">help"),
             command_prefix=get_prefix,
-            help_command=AikoHelp(),
+            help_command=AimikoHelp(),
             intents=intents,
             owner_id=454357482102587393,
             *args,

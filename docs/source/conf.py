@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Aiko"
+project = "Aimiko"
 copyright = "2023, Noelle"
 author = "Noelle"
 
@@ -22,7 +22,7 @@ latex_elements = {
     "sphinxsetup": "verbatimwithframe=false",
 }
 
-html_title = "Aiko"
+html_title = "Aimiko"
 
 
 # -- Options for HTML output -------------------------------------------------

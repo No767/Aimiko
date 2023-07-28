@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Optional, Union
 
 import discord
 from discord.ext import commands, menus
-from libs.utils.pages import AikoPages
+from libs.utils.pages import AimikoPages
 
 
 class GroupHelpPageSource(menus.ListPageSource):
@@ -21,7 +21,7 @@ class GroupHelpPageSource(menus.ListPageSource):
         self.title: str = f"{self.group.qualified_name} Commands"
         self.description: str = self.group.description
 
-    async def format_page(self, menu: AikoPages, commands: List[commands.Command]):
+    async def format_page(self, menu: AimikoPages, commands: List[commands.Command]):
         embed = discord.Embed(
             title=self.title,
             description=self.description,
@@ -105,7 +105,7 @@ class HelpSelectMenu(discord.ui.Select["HelpMenu"]):
             await self.view.rebind(source, interaction)
 
 
-class HelpMenu(AikoPages):
+class HelpMenu(AimikoPages):
     def __init__(self, source: menus.PageSource, ctx: commands.Context):
         super().__init__(source, ctx=ctx, compact=True)
 
@@ -162,12 +162,12 @@ class FrontPageSource(menus.PageSource):
         # created_at = time.format_dt(menu.ctx.bot.user.created_at, 'F')
         if self.index == 0:
             embed.add_field(
-                name="About Aiko",
+                name="About Aimiko",
                 value=(
-                    "Aiko is the friendly trans bot with features that have been requested in the Trans Gayming server. "
-                    "Aiko offers features such as the reminder feature, birthdays, and many more. You can get more "
+                    "Aimiko is the friendly trans bot with features that have been requested in the Trans Gayming server. "
+                    "Aimiko offers features such as the reminder feature, birthdays, and many more. You can get more "
                     "information on the commands offered by using the dropdown below.\n\n"
-                    "Aiko is also open source. You can see the code on [GitHub](https://github.com/No767/Aiko)"
+                    "Aimiko is also open source. You can see the code on [GitHub](https://github.com/No767/Aimiko)"
                 ),
                 inline=False,
             )
@@ -195,7 +195,7 @@ class FrontPageSource(menus.PageSource):
         return embed
 
 
-class AikoHelp(commands.HelpCommand):
+class AimikoHelp(commands.HelpCommand):
     context: commands.Context
 
     def __init__(self):

@@ -1,8 +1,8 @@
-from .paginator import AikoPages
+from .paginator import AimikoPages
 from .sources import BasicListSource, EmbedListSource, FieldPageSource, SimplePageSource
 
 __all__ = [
-    "AikoPages",
+    "AimikoPages",
     "BasicListSource",
     "EmbedListSource",
     "FieldPageSource",

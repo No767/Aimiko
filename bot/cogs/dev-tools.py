@@ -1,7 +1,7 @@
 from typing import Literal, Optional
 
 import discord
-from aikocore import AikoCore
+from aimikocore import AimikoCore
 from discord.ext import commands
 from discord.ext.commands import Context, Greedy
 
@@ -18,7 +18,7 @@ def is_nat():
 class DevTools(commands.Cog, command_attrs=dict(hidden=True)):
     """Tools for developing Kumiko"""
 
-    def __init__(self, bot: AikoCore):
+    def __init__(self, bot: AimikoCore):
         self.bot = bot
 
     @property
@@ -74,5 +74,5 @@ class DevTools(commands.Cog, command_attrs=dict(hidden=True)):
         await ctx.send(f"Synced the tree to {ret}/{len(guilds)}.")
 
 
-async def setup(bot: AikoCore) -> None:
+async def setup(bot: AimikoCore) -> None:
     await bot.add_cog(DevTools(bot))

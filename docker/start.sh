@@ -8,4 +8,4 @@
 #     python3 /Kumiko/migrations-runner.py
 # fi
 
-exec python3 /Aiko/bot/aikobot.py
+exec python3 /Aimiko/bot/aimikobot.py

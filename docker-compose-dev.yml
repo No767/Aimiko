@@ -1,8 +1,8 @@
 version: "3.9"
-name: "aiko-dev"
+name: "aimiko-dev"
 services:
   postgres:
-    container_name: Aiko-Postgres-Dev
+    container_name: Aimiko-Postgres-Dev
     image: postgres:15 
     env_file:
       - .env

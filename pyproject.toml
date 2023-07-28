@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "aiko"
+name = "aimiko"
 version = "0.0.1"
 description = "A multipurpose bot designed for the Trans Gayming server"
 authors = ["Noelle <73260931+No767@users.noreply.github.com>"]

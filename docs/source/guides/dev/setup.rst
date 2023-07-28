@@ -8,14 +8,14 @@ Local Setup
 
     .. code-block:: bash
 
-        git clone https://github.com/[username]/Aiko.git && cd Aiko
+        git clone https://github.com/[username]/Aimiko.git && cd Aimiko
     
 
     Or if you have the `gh` cli tool installed:
 
     .. code-block:: bash
 
-        gh repo clone [username]/Aiko
+        gh repo clone [username]/Aimiko
     
 
 2. Install all of the dependencies (including dev dependencies)
@@ -58,4 +58,4 @@ Local Setup
 Dev Mode
 ---------------------
 
-Aiko v0.7+ includes an development mode feature, which will set up `jishaku <https://github.com/Gorialis/jishaku>`_ and a custom cog reloader, known as the FS watcher. The FS (File System) watcher is just like HMR (Hot Module Replacements). Once you press Ctrl+s in your cog, it will automatically reload it so the code executed is changed. Later on, there may be more development features that will be included. Make sure you first install the dev dependencies first! And in order to enable it, set an environment variable called ``DEV_MODE`` to ``True``.
+Aimiko v0.7+ includes an development mode feature, which will set up `jishaku <https://github.com/Gorialis/jishaku>`_ and a custom cog reloader, known as the FS watcher. The FS (File System) watcher is just like HMR (Hot Module Replacements). Once you press Ctrl+s in your cog, it will automatically reload it so the code executed is changed. Later on, there may be more development features that will be included. Make sure you first install the dev dependencies first! And in order to enable it, set an environment variable called ``DEV_MODE`` to ``True``.

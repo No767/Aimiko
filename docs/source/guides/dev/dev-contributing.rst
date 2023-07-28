@@ -19,21 +19,21 @@ Coding Style
 
 Variables
 ^^^^^^^^^^
-Aiko uses the PEP8 standards. So any variables should be in snake_case. 
+Aimiko uses the PEP8 standards. So any variables should be in snake_case. 
 
 See `this <https://realpython.com/python-pep8/>_` on an introduction on this style.
 
 Formatting
 ^^^^^^^^^^^
 
-Aiko uses pre-commit hooks to format all of the code. Make sure run ``git add --all`` before committing to add all of the files. More than likely you'll need to commit twice due to the formatting that pre-commit does afterwards. Pre-commit hooks are also ran on every PR except Dependabot updates and merges into the main branch.
+Aimiko uses pre-commit hooks to format all of the code. Make sure run ``git add --all`` before committing to add all of the files. More than likely you'll need to commit twice due to the formatting that pre-commit does afterwards. Pre-commit hooks are also ran on every PR except Dependabot updates and merges into the main branch.
 
 Docstrings
 ^^^^^^^^^^^
 
-Just like how major programs are documented, the libraries that are custom made for Aiko also have to be documented. The current standard for this project is to use `Google's Docstring Guide <https://google.github.io/styleguide/pyguide.html#s3.8-comments-and-docstrings>`_. A handy VS Code extension that should be used is the `autoDocstring <https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring>`_ extension. By default it will generate the docstring in the Google format. Docstrings should be used on all coroutines and methods (excluding cogs), and on classes as well. 
+Just like how major programs are documented, the libraries that are custom made for Aimiko also have to be documented. The current standard for this project is to use `Google's Docstring Guide <https://google.github.io/styleguide/pyguide.html#s3.8-comments-and-docstrings>`_. A handy VS Code extension that should be used is the `autoDocstring <https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring>`_ extension. By default it will generate the docstring in the Google format. Docstrings should be used on all coroutines and methods (excluding cogs), and on classes as well. 
 
-Google, Numpy, and Sphinx docstrings are also supported for commands. Aiko is documented w/ Google docstrings, so please make sure to use that format.
+Google, Numpy, and Sphinx docstrings are also supported for commands. Aimiko is documented w/ Google docstrings, so please make sure to use that format.
 
 Example Cog:
 

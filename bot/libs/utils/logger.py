@@ -8,7 +8,7 @@ import discord
 BE = TypeVar("BE", bound=BaseException)
 
 
-class AikoLogger:
+class AimikoLogger:
     def __init__(self) -> None:
         self.self = self
         self.log = logging.getLogger()
@@ -18,7 +18,7 @@ class AikoLogger:
         self.log.setLevel(logging.INFO)
         logging.getLogger("discord").setLevel(logging.INFO)
         handler = RotatingFileHandler(
-            filename="aiko.log",
+            filename="aimiko.log",
             encoding="utf-8",
             mode="w",
             maxBytes=max_bytes,

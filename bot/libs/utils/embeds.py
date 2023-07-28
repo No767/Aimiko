@@ -2,7 +2,7 @@ import discord
 
 
 class Embed(discord.Embed):
-    """Aiko's custom default embed"""
+    """Aimiko's custom default embed"""
 
     def __init__(self, **kwargs):
         kwargs.setdefault("color", discord.Color.from_rgb(255, 163, 253))
