@@ -5,7 +5,7 @@ from pathlib import Path as SyncPath
 import asyncpg
 import discord
 from aiohttp import ClientSession
-from cogs import EXTENSIONS
+from cogs import EXTENSIONS, VERSION
 from discord.ext import commands
 from libs.utils import AimikoHelp, ensure_pg_conn
 
@@ -48,6 +48,7 @@ class AimikoCore(commands.Bot):
         self.dev_mode = dev_mode
         self._session = session
         self._pool = pool
+        self._version = VERSION
         self.default_prefix = ">"
         self.logger = logging.getLogger("discord")
 
@@ -70,6 +71,16 @@ class AimikoCore(commands.Bot):
             asyncpg.Pool: asyncpg connection pool
         """
         return self._pool
+
+    @property
+    def version(self) -> str:
+        """The current version of the bot
+
+        Returns:
+            str: Current version
+        """
+        parsed_version = f"{self._version.major}.{self._version.minor}.{self._version.micro}-{self._version.releaselevel}"
+        return parsed_version
 
     async def fs_watcher(self) -> None:
         cogsPath = SyncPath(__file__).parent.joinpath("cogs")
