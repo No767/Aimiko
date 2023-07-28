@@ -1,0 +1,6 @@
+ignore:
+  - "bot/libs/ui/**" # These are Discord UI stuff, so it's untestable (even w/ dpytest)
+  - "bot/libs/utils/formats.py" # Used by RDanny so we know it works.
+  - "bot/libs/utils/help.py" # How can you test this...
+  - "bot/libs/utils/logger.py" # Untestable. Doesn't return anything
+  - "bot/libs/utils/time.py" # used by rdanny in prod so it is guarneeted to work
