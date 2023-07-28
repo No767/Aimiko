@@ -25,5 +25,5 @@ def get_uri():
 @pytest.mark.asyncio
 async def test_ensure_good_conn(get_uri):
     async with asyncpg.create_pool(dsn=get_uri) as pool:
-        res = await ensure_pg_conn(conn_pool=pool)
+        res = await ensure_pg_conn(pool=pool)
         assert res is True
