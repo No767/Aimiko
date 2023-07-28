@@ -1,6 +1,6 @@
 <div align=center>
 
-![Aiko](./assets/logo-250x.png)
+![Aiko](./assets/logo-150x.png)
 
 # Aiko
 
