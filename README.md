@@ -1,6 +1,6 @@
 <div align=center>
 
-# Aimiko (愛子)
+# Aimiko (愛美子)
 
 ![Aimiko](./assets/logo-200x.png)
 
@@ -10,7 +10,7 @@ A multipurpose Discord bot built for the Trans Gayming Discord community
 
 <div align=left>
 
-## Aimiko (愛子)
+## Aimiko (愛美子)
 
 Aimiko is a multipurpose Discord bot built for the Trans Gayming Discord community, for the Trans Gayming Discord community. Aimiko is designed to encompass requested features on the server 
 
