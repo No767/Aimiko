@@ -39,7 +39,7 @@ RUN apt update \
 WORKDIR /Aimiko
 COPY /bot/aimikobot.py /Aimiko/bot/
 COPY /bot/aimikocore.py /Aimiko/bot/
-# COPY /Migrations /Aimiko/Migrations
+# COPY /Migrations /Aimiko/migrations
 COPY /bot/cogs /Aimiko/bot/cogs
 COPY /bot/libs /Aimiko/bot/libs/
 # COPY /migrations-runner.py /Aimiko/migrations-runner.py
@@ -53,7 +53,7 @@ RUN adduser --disabled-password --gecos "" aimiko \
   && chmod +x /Aimiko/start.sh \
   && chmod +x /Aimiko/wait-for
 
-USER Aimiko
+USER aimiko
 
 ENV PATH="${PATH}:/home/aimiko/.local/bin"
 
