@@ -36,6 +36,13 @@ nox = "^2023.4.22"
 nox-poetry = "^1.0.3"
 dpytest = "^0.7.0"
 
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.1.1"
+sphinx-autobuild = "^2021.3.14"
+sphinx-copybutton = "^0.5.2"
+furo = "^2023.7.26"
+
 [tool.isort]
 profile = 'black'
 
