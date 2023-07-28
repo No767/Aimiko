@@ -25,7 +25,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ghcr.io/no767/aiko
+            ghcr.io/no767/aimiko
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
