@@ -11,7 +11,7 @@ Local Setup
         git clone https://github.com/[username]/Aimiko.git && cd Aimiko
     
 
-    Or if you have the `gh` cli tool installed:
+    Or if you have the ``gh`` cli tool installed:
 
     .. code-block:: bash
 
@@ -47,8 +47,13 @@ Local Setup
 
         sudo docker compose -f docker-compose-dev.yml up -d
     
+6. Enable the PostgreSQL extension ``pg_trgm``
 
-6. Run the database migrations
+    .. code-block:: sql
+
+        CREATE EXTENSION IF NOT EXISTS pg_trgm;
+
+7. Run the database migrations
 
     .. code-block:: bash
 

@@ -4,7 +4,7 @@ Dev Contributing Guide
 Note to new contributors
 ---------------------------
 
-When you contribute to this project, you are subject to the `Code of Conduct <https://github.com/No767/Kumiko/blob/dev/CODE_OF_CONDUCT.md>`_. Any violations of the Code Of Conduct will be handled as stated. Read the contributing guide. **Support is not given if you didn't bother reading the documentation for setting up any of the requirements, or if you didn't bother to read the contributing guide.**
+When you contribute to this project, you are subject to the `Code of Conduct <https://github.com/No767/Aimiko/blob/dev/CODE_OF_CONDUCT.md>`_. Any violations of the Code Of Conduct will be handled as stated. Read the contributing guide. **Support is not given if you didn't bother reading the documentation for setting up any of the requirements, or if you didn't bother to read the contributing guide.**
 
 Before Starting
 ----------------
@@ -21,7 +21,7 @@ Variables
 ^^^^^^^^^^
 Aimiko uses the PEP8 standards. So any variables should be in snake_case. 
 
-See `this <https://realpython.com/python-pep8/>_` on an introduction on this style.
+See `this <https://realpython.com/python-pep8/>`_ on an introduction on this style.
 
 Formatting
 ^^^^^^^^^^^
@@ -77,7 +77,7 @@ Git Commit Styleguides
 Releasing Tags
 ^^^^^^^^^^^^^^^
 
-In order to automate the release system, you have to make sure that in order to use it, the git commit message must be done correctly. Only use this if there is a new update that is ready to be released. Kumiko uses `SemVer <https://semver.org/>`_  as the standard for versioning. Here's a table that should help with explaining this:
+In order to automate the release system, you have to make sure that in order to use it, the git commit message must be done correctly. Only use this if there is a new update that is ready to be released. Aimiko uses `SemVer <https://semver.org/>`_  as the standard for versioning. Here's a table that should help with explaining this:
 
  =============================================================== ===================== 
                 Type of Release, Update, or Patch                       Example        

@@ -13,6 +13,8 @@ Aimiko
 
    guides/dev/index
 
+.. figure:: /_static/logo-200x.png
+   :align: right
 
 .. image:: https://img.shields.io/github/v/release/No767/Aimiko?label=Release&logo=github&sort=semver
    :alt: GitHub release (latest SemVer)
