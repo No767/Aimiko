@@ -7,7 +7,8 @@ import discord
 from aiohttp import ClientSession
 from cogs import EXTENSIONS, VERSION
 from discord.ext import commands
-from libs.utils import AimikoHelp, ensure_pg_conn
+from libs.utils import AimikoHelp, ensure_pg_conn, get_prefix
+from lru import LRU
 
 # Some weird import logic to ensure that watchfiles is there
 _fsw = True
@@ -15,13 +16,6 @@ try:
     from watchfiles import awatch
 except ImportError:
     _fsw = False
-
-
-def get_prefix(bot, msg: discord.Message):
-    if msg.guild is None:
-        return bot.default_prefix
-    prefixes = ["?", "!", ">"]
-    return prefixes
 
 
 class AimikoCore(commands.Bot):
@@ -48,6 +42,7 @@ class AimikoCore(commands.Bot):
         self.dev_mode = dev_mode
         self._session = session
         self._pool = pool
+        self._prefixes: LRU = LRU(128)
         self._version = VERSION
         self.default_prefix = ">"
         self.logger = logging.getLogger("discord")
@@ -81,6 +76,19 @@ class AimikoCore(commands.Bot):
         """
         parsed_version = f"{self._version.major}.{self._version.minor}.{self._version.micro}-{self._version.releaselevel}"
         return parsed_version
+
+    # This idea is directly ported from Kumiko
+    # In order to not take up too much memory, a LRU cache is used instead.
+    @property
+    def prefixes(self) -> LRU:
+        """LRU cache for prefixes. Maxed out at 128 keys until it will start replacing old entries
+
+        This LRU cache is not a pure-python implementation. It's a pure C implementation
+
+        Returns:
+            LRU: LRU cache
+        """
+        return self._prefixes
 
     async def fs_watcher(self) -> None:
         cogsPath = SyncPath(__file__).parent.joinpath("cogs")

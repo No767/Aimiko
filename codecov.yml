@@ -8,3 +8,5 @@ ignore:
   - "bot/cogs/**" # can't really test cogs
   - "aimikobot.py"
   - "aimikocore.py"
+  - "bot/libs/utils/checks.py" # pretty sure that there is no way to literally test
+  - "bot/libs/utils/prefix.py" # can't test due to tied with the on_guild_join events and requires a working bot. cannot be mocked

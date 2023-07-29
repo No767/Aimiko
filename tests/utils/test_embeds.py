@@ -10,7 +10,7 @@ from discord.ext import commands
 path = Path(__file__).parents[2].joinpath("bot")
 sys.path.append(str(path))
 
-from libs.utils import Embed
+from libs.utils import ConfirmEmbed, Embed, ErrorEmbed
 
 
 class EmbedCog(commands.Cog):
@@ -20,6 +20,16 @@ class EmbedCog(commands.Cog):
     @commands.command(name="embed-test")
     async def embed_test(self, ctx: commands.Context) -> None:
         embed = Embed(title="Hi")
+        await ctx.send(embed=embed)
+
+    @commands.command(name="embed-error")
+    async def embed_error(self, ctx: commands.Context) -> None:
+        embed = ErrorEmbed()
+        await ctx.send(embed=embed)
+
+    @commands.command(name="embed-confirm")
+    async def embed_confirm(self, ctx: commands.Context) -> None:
+        embed = ConfirmEmbed()
         await ctx.send(embed=embed)
 
 
@@ -45,4 +55,18 @@ async def bot():
 async def test_embed_content(bot):
     embed = Embed(title="Hi")
     await dpytest.message(">embed-test")
+    assert dpytest.verify().message().embed(embed=embed)
+
+
+@pytest.mark.asyncio
+async def test_error_embed(bot):
+    embed = ErrorEmbed()
+    await dpytest.message(">embed-error")
+    assert dpytest.verify().message().embed(embed=embed)
+
+
+@pytest.mark.asyncio
+async def test_confirm_embed(bot):
+    embed = ConfirmEmbed()
+    await dpytest.message(">embed-confirm")
     assert dpytest.verify().message().embed(embed=embed)

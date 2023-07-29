@@ -15,6 +15,15 @@ def is_nat():
     return commands.check(pred)
 
 
+class DispatchFlags(commands.FlagConverter):
+    guild: bool = commands.flag(
+        default=True, description="Dispatch all guild related events"
+    )
+    member: bool = commands.flag(
+        default=False, description="Dispatch all member related events"
+    )
+
+
 class DevTools(commands.Cog, command_attrs=dict(hidden=True)):
     """Tools for developing Kumiko"""
 
@@ -72,6 +81,26 @@ class DevTools(commands.Cog, command_attrs=dict(hidden=True)):
                 ret += 1
 
         await ctx.send(f"Synced the tree to {ret}/{len(guilds)}.")
+
+    @commands.check_any(commands.is_owner(), is_nat())
+    @commands.guild_only()
+    @commands.command(name="dispatch")
+    async def dispatch(
+        self, ctx: commands.Context, event: str, *, flags: DispatchFlags
+    ) -> None:
+        """Dispatch an event on the bot. Only really useful for testing"""
+        if flags.guild:
+            self.bot.dispatch(event, ctx.guild)
+            await ctx.send(f"Dispatched `{event}` event")
+            return
+
+        if flags.member:
+            self.bot.dispatch(event, ctx.guild, ctx.author)
+            await ctx.send(f"Dispatched `{event}` event")
+            return
+
+        await ctx.send("Didn't dispatch event")
+        return
 
 
 async def setup(bot: AimikoCore) -> None:

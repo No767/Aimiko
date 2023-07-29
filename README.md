@@ -23,7 +23,9 @@ More features are hopefully coming soon!
 
 ## Prefix
 
-The supported prefixes are `>`, `?`, `!`, and `/`. Custom prefix module will be implemented later.
+Aimiko uses both prefixed and slash commands. The currently supported prefixes are `>` and `/`
+
+The default prefix is `>`. You can set up to 10 (including the default prefix) unique prefixes. For example, you could set one of the prefixes to be `?` instead. These do not change the global prefix; only on the current server where you have set it up
 
 ## Getting Started
 
