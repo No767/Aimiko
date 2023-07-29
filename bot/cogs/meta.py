@@ -1,7 +1,9 @@
+import platform
+
 import discord
 from aimikocore import AimikoCore
 from discord.ext import commands
-from libs.utils import time
+from libs.utils import Embed, time
 
 
 class Meta(commands.Cog):
@@ -28,6 +30,25 @@ class Meta(commands.Cog):
     async def version(self, ctx: commands.Context) -> None:
         """Shows the version of Aimiko"""
         await ctx.send(f"Build Version: {self.bot.version}")
+
+    @commands.hybrid_command(name="info")
+    async def info(self, ctx: commands.Context) -> None:
+        """Shows the info of the bot"""
+        embed = Embed()
+        embed.title = f"{self.bot.user.name} Info"  # type: ignore
+        embed.set_thumbnail(url=self.bot.user.display_avatar.url)  # type: ignore
+        embed.add_field(name="Server Count", value=len(self.bot.guilds), inline=True)
+        embed.add_field(name="User Count", value=len(self.bot.users), inline=True)
+        embed.add_field(
+            name="Python Version", value=platform.python_version(), inline=True
+        )
+        embed.add_field(
+            name="Discord.py Version", value=discord.__version__, inline=True
+        )
+        embed.add_field(
+            name="Aimiko Build Version", value=self.bot.version, inline=True
+        )
+        await ctx.send(embed=embed)
 
 
 async def setup(bot: AimikoCore) -> None:
