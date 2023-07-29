@@ -5,3 +5,6 @@ ignore:
   - "bot/libs/utils/logger.py" # Untestable. Doesn't return anything
   - "bot/libs/utils/time.py" # used by rdanny in prod so it is guarneeted to work
   - "bot/libs/utils/pages/**" # you can't test the pages module srry
+  - "bot/cogs/**" # can't really test cogs
+  - "aimikobot.py"
+  - "aimikocore.py"
