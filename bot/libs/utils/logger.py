@@ -38,6 +38,7 @@ class AimikoLogger:
         exc: Optional[BE],
         traceback: Optional[TracebackType],
     ) -> None:
+        self.log.info("Shutting down...")
         handlers = self.log.handlers[:]
         for hdlr in handlers:
             hdlr.close()
