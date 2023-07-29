@@ -8,12 +8,17 @@ from aiohttp import ClientSession
 from dotenv import load_dotenv
 from libs.utils import AimikoLogger
 
-try:
-    import uvloop
+# The idea comes from this: https://github.com/No767/Kumiko/commit/4ceef1aeee7972ba85c0e13ba13651ac61a5fb52
+# Thank you rtk-rnjn for including this on Kumiko
+if os.name == "nt":
+    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+else:
+    try:
+        import uvloop
 
-    asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
-except ImportError:
-    pass
+        asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+    except ImportError:
+        pass
 
 load_dotenv()
 
