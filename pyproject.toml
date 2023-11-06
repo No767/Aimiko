@@ -25,7 +25,7 @@ lru-dict = "^1.2.0"
 pre-commit = "^3.4.0"
 pyright = "^1.1.332"
 watchfiles = "^0.20.0"
-jishaku = "^2.5.1"
+jishaku = "^2.5.2"
 ruff = "^0.1.4"
 
 
