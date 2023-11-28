@@ -24,7 +24,7 @@ lru-dict = "^1.2.0"
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.4.0"
 pyright = "^1.1.335"
-watchfiles = "^0.20.0"
+watchfiles = "^0.21.0"
 jishaku = "^2.5.2"
 ruff = "^0.1.4"
 
