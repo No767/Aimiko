@@ -10,6 +10,8 @@ A multipurpose Discord bot built for the Trans Gayming Discord community
 
 <div align=left>
 
+> ⚠️ **IMPORTANT**:
+> As of 2/19/2024, Aimiko is no longer being actively supported and developed. The repo is now archived to maintain historical content. More information can be found in https://github.com/No767/Aimiko/issues/75.
 ## Aimiko (愛美子)
 
 Aimiko is a multipurpose Discord bot built for the Trans Gayming Discord community, for the Trans Gayming Discord community. Aimiko is designed to encompass requested features on the server 
